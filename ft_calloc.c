@@ -1,30 +1,24 @@
 /* ************************************************************************** */
 /*                                                                            */
 /*                                                        :::      ::::::::   */
-/*   ft_strlcpy.c                                       :+:      :+:    :+:   */
+/*   ft_calloc.c                                        :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
-/*   By: mkaraden < mkaraden@student.42istanbul.co  +#+  +:+       +#+        */
+/*   By: mkaraden <mkaraden@student.42istanbul.com  +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
-/*   Created: 2022/10/04 13:06:11 by mkaraden          #+#    #+#             */
-/*   Updated: 2022/10/07 18:59:36 by mkaraden         ###   ########.fr       */
+/*   Created: 2022/10/07 18:34:46 by mkaraden          #+#    #+#             */
+/*   Updated: 2022/10/07 18:39:02 by mkaraden         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
 #include "libft.h"
 
-size_t	ft_strlcpy(char *dst, const char *src, size_t dstsize)
+void	*ft_calloc(size_t nmeb, size_t size)
 {
-	size_t	i;
+	void	*rt;
 
-	i = 0;
-	while (src[i] && (i < (dstsize - 1)))
-	{
-		dst[i] = src[i];
-		i++;
-	}
-	dst[i] = '\0';
-	i = 0;
-	while (src[i])
-		i++;
-	return (i);
+	rt = malloc(nmeb * size);
+	if (!rt)
+		return (0);
+	ft_bzero(rt, nmeb * size);
+	return (rt);
 }

@@ -6,7 +6,7 @@
 /*   By: mkaraden < mkaraden@student.42istanbul.co  +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2022/10/05 16:34:46 by mkaraden          #+#    #+#             */
-/*   Updated: 2022/10/05 16:54:28 by mkaraden         ###   ########.fr       */
+/*   Updated: 2022/10/07 18:22:01 by mkaraden         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -42,4 +42,10 @@ int	ft_atoi(const char *str)
 		i++;
 	}
 	while (ft_isdigit(str[i]))
+	{
+		rt = (rt * 10) + (str[i] - '0');
+		i++;
+	}
+	return (rt * sign);
+}
 
