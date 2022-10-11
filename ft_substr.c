@@ -3,10 +3,10 @@
 /*                                                        :::      ::::::::   */
 /*   ft_substr.c                                        :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
-/*   By: mkaraden <mkaraden@student.42.fr>          +#+  +:+       +#+        */
+/*   By: mkaraden <mkaraden@student.42istanbul.c    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2022/10/08 13:20:43 by mkaraden          #+#    #+#             */
-/*   Updated: 2022/10/10 13:45:34 by mkaraden         ###   ########.fr       */
+/*   Updated: 2022/10/11 11:31:26 by mkaraden         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -16,7 +16,7 @@ char	*ft_substr(char const *s, unsigned int start, size_t len)
 {
 	char	*rt;
 	size_t	i;
-	int		slen; //condition icinde fonk olarak karsilastirince her loopda bastan cagiriyor
+	size_t	slen; //condition icinde fonk olarak karsilastirince her loopda bastan cagiriyor
 
 	slen = ft_strlen(s);
 	i = 0;

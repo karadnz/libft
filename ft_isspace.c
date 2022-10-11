@@ -1,37 +1,25 @@
 /* ************************************************************************** */
 /*                                                                            */
 /*                                                        :::      ::::::::   */
-/*   ft_memmove.c                                       :+:      :+:    :+:   */
+/*   ft_isspace.c                                       :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
 /*   By: mkaraden <mkaraden@student.42istanbul.c    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
-/*   Created: 2022/10/04 11:57:37 by mkaraden          #+#    #+#             */
-/*   Updated: 2022/10/11 11:49:34 by mkaraden         ###   ########.fr       */
+/*   Created: 2022/10/11 11:30:26 by mkaraden          #+#    #+#             */
+/*   Updated: 2022/10/11 11:31:38 by mkaraden         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
 #include "libft.h"
 
-void	*ft_memmove(void *dest, const void *src, size_t n)
+int ft_isspace(int c)
 {
-	size_t			index;
-	unsigned char	*cdest;
-	unsigned char	*csrc;
-	unsigned char	temp[n];
+	unsigned char ch;
 
-	index = 0;
-	cdest = (unsigned char*)dest;
-	csrc = (unsigned char*)src;
-	while (index < n)
-	{
-		temp[index] = csrc[index];
-		index++;
-	}
-	index = 0;
-	while (index < 0)
-	{
-		cdest[index] = temp[index];
-		index++;
-	}
-	return (dest);
+	ch = c;
+	if (ch == '\f' || ch == '\n' || ch == ' ')
+		return (1);
+	if (ch == '\v' || ch == '\t' || ch == '\r')
+		return (1);
+	return (0);
 }
