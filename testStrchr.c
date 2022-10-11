@@ -31,7 +31,7 @@ char	*ft_strchr2(const char *s, int c)
 int main()
 {
     char *str = "deneme123";
-    char find = '3';
+    char find = 0;
     printf("%s\n",ft_strchr2(str,find));
     printf("----------------------\n");
     printf("%s\n",ft_strchr(str,find));

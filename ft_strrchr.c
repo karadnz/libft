@@ -3,10 +3,10 @@
 /*                                                        :::      ::::::::   */
 /*   ft_strrchr.c                                       :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
-/*   By: mkaraden < mkaraden@student.42istanbul.co  +#+  +:+       +#+        */
+/*   By: mkaraden <mkaraden@student.42istanbul.c    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2022/10/05 13:02:05 by mkaraden          #+#    #+#             */
-/*   Updated: 2022/10/05 13:16:52 by mkaraden         ###   ########.fr       */
+/*   Updated: 2022/10/11 14:16:20 by mkaraden         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -27,5 +27,7 @@ char	*ft_strrchr(const char *str, int c)
 		}
 		i++;
 	}
+	if (str[i] == (unsigned char) c)
+		rt = (char *)&str[i];
 	return (rt);
 }
