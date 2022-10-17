@@ -6,7 +6,7 @@
 /*   By: mkaraden <mkaraden@student.42istanbul.c    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2022/10/10 13:47:24 by mkaraden          #+#    #+#             */
-/*   Updated: 2022/10/11 13:56:07 by mkaraden         ###   ########.fr       */
+/*   Updated: 2022/10/17 12:14:19 by mkaraden         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -61,6 +61,8 @@ char    *ft_itoa(int n)
     i = 0;
     len = ft_intlen(n);
     rt = (char *)malloc((len + 1) * sizeof(char));
+    if (!rt)
+        return (0);
     if (n == 0)
         rt[i++] = '0';
     while (n != 0)

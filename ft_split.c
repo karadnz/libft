@@ -3,10 +3,10 @@
 /*                                                        :::      ::::::::   */
 /*   ft_split.c                                         :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
-/*   By: mkaraden <mkaraden@student.42.fr>          +#+  +:+       +#+        */
+/*   By: mkaraden <mkaraden@student.42istanbul.c    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2022/10/08 16:52:22 by mkaraden          #+#    #+#             */
-/*   Updated: 2022/10/10 13:45:32 by mkaraden         ###   ########.fr       */
+/*   Updated: 2022/10/17 12:16:49 by mkaraden         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -41,15 +41,18 @@ char	**ft_split(char const *s, char c)
 
 	i = 0;
 	j = -1;
+	if (!s)
+		return (0);
 	wordcount = ft_getwordcount(s,c);
 	rt = (char **)malloc(sizeof(char *) * (wordcount + 1)); //sondaki null pointer icin
-
+	if (!rt)
+		return (0);
 	while(s[i])
 	{
 		templen = 0;
 		while (s[i] == c)  //c leri geciyor
 			i++;
-		if(s[i] != c && s[i]) //sona gelmediyse rt artiyor
+		if(s[i] != c && s[i]) //sona gelmediyse dis array artiyor
 			j++;
 		while (s[i + templen] != c && s[i + templen]) //c gelene kadar index artiyor
 			templen++;

@@ -6,7 +6,7 @@
 /*   By: mkaraden <mkaraden@student.42istanbul.c    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2022/10/03 17:40:07 by mkaraden          #+#    #+#             */
-/*   Updated: 2022/10/15 18:25:06 by mkaraden         ###   ########.fr       */
+/*   Updated: 2022/10/17 12:06:32 by mkaraden         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -74,7 +74,6 @@ t_list				*ft_lstmap(t_list *lst, void *(*f)(void *), \
 					void (*del)(void *));
 
 int					get_next_line(int fd, char **line);
-int					ft_isspace(int c);
 int					ft_isspace_str(char *str);
 char				*ft_chrdel(char const *s, char c);
 char				*ft_strstr(const char *str, const char *to_find);

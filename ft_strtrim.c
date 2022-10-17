@@ -6,7 +6,7 @@
 /*   By: mkaraden <mkaraden@student.42istanbul.c    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2022/10/08 14:18:52 by mkaraden          #+#    #+#             */
-/*   Updated: 2022/10/13 15:40:01 by mkaraden         ###   ########.fr       */
+/*   Updated: 2022/10/16 16:31:01 by mkaraden         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -33,6 +33,8 @@ char	*ft_strtrim(char const *s1, char const *set)
 	int		end;
 	size_t	slen;
 
+	if (!s1 || !set) //set null da olabilir mi diye bak
+		return (0);
 	slen = ft_strlen(s1);
 	start = 0;
 	end = slen - 1;

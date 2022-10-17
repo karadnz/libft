@@ -6,13 +6,30 @@
 /*   By: mkaraden <mkaraden@student.42istanbul.c    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2022/10/04 11:57:37 by mkaraden          #+#    #+#             */
-/*   Updated: 2022/10/11 20:08:04 by mkaraden         ###   ########.fr       */
+/*   Updated: 2022/10/16 17:09:11 by mkaraden         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
 #include "libft.h"
 
 void	*ft_memmove(void *dest, const void *src, size_t n)
+{
+	unsigned char	*tmpdest;
+	unsigned char	*tmpsrc;
+
+	tmpdest = (unsigned char *)dest;
+	tmpsrc = (unsigned char *)src;
+	if (src > dest)
+		ft_memcpy(tmpdest,tmpsrc,n);
+	else
+	{
+		while(n--)
+			tmpdest[n] = tmpsrc[n];
+	}
+	return (dest);
+}
+
+void	*ft_memmove2(void *dest, const void *src, size_t n)
 {
 	char	*tmp;
 

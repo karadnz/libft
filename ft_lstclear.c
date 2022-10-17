@@ -1,25 +1,27 @@
 /* ************************************************************************** */
 /*                                                                            */
 /*                                                        :::      ::::::::   */
-/*   ft_isspace.c                                       :+:      :+:    :+:   */
+/*   ft_lstclear.c                                      :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
 /*   By: mkaraden <mkaraden@student.42istanbul.c    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
-/*   Created: 2022/10/11 11:30:26 by mkaraden          #+#    #+#             */
-/*   Updated: 2022/10/11 11:31:38 by mkaraden         ###   ########.fr       */
+/*   Created: 2022/10/16 18:40:28 by mkaraden          #+#    #+#             */
+/*   Updated: 2022/10/16 18:45:34 by mkaraden         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
 #include "libft.h"
 
-int ft_isspace(int c)
+void ft_lstclear(t_list **lst, void (*del)(void*))
 {
-	unsigned char ch;
+    t_list	*temp;
 
-	ch = c;
-	if (ch == '\f' || ch == '\n' || ch == ' ')
-		return (1);
-	if (ch == '\v' || ch == '\t' || ch == '\r')
-		return (1);
-	return (0);
+	if (!del || !lst || !*lst)
+		return ;
+	while (lst && *lst)
+	{
+		temp = (*lst)->next;
+		ft_lstdelone(*lst, del); //eger tempde tutmazsak next de gider //dangling pointer bak
+		*lst = temp;
+	}
 }

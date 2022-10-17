@@ -1,33 +1,35 @@
 /* ************************************************************************** */
 /*                                                                            */
 /*                                                        :::      ::::::::   */
-/*   ft_strmapi.c                                       :+:      :+:    :+:   */
+/*   ft_lstmap.c                                        :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
 /*   By: mkaraden <mkaraden@student.42istanbul.c    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
-/*   Created: 2022/10/14 00:16:46 by mkaraden          #+#    #+#             */
-/*   Updated: 2022/10/16 16:26:05 by mkaraden         ###   ########.fr       */
+/*   Created: 2022/10/16 18:50:15 by mkaraden          #+#    #+#             */
+/*   Updated: 2022/10/17 12:08:45 by mkaraden         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
 #include "libft.h"
 
-char *ft_strmapi(char const *s, char (*f)(unsigned int, char))
+t_list *ft_lstmap(t_list *lst, void *(*f)(void *),void (*del)(void *))
 {
-    char	*rt;
-	size_t	i;
+    t_list *rt;
+    t_list *temp;
 
-    if (!s)
+    rt = 0;
+    if (!lst || !f || !del)
         return (0);
-    rt = (char *)malloc(ft_strlen(s) + 1);
-	if (!rt)
-		return (0);
-	i = 0;
-	while (s[i])
-	{
-		rt[i] = (*f)(i, s[i]);
-		i++;
-	}
-    rt[i] = '\0';
-	return (rt);
+    while (lst)
+    {
+        temp = ft_lstnew((*f)(lst->content));  //listnew content alarak yeni bir eleman olsuturp donduruyor
+        if (!temp)
+        {
+            ft_lstdelone(lst,del);
+        }
+        ft_lstadd_back(&rt, temp);
+        lst = lst->next;
+    }
+    return(rt);
+    
 }
