@@ -6,17 +6,16 @@
 /*   By: mkaraden <mkaraden@student.42istanbul.c    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2022/10/10 13:47:24 by mkaraden          #+#    #+#             */
-/*   Updated: 2022/10/17 13:49:03 by mkaraden         ###   ########.fr       */
+/*   Updated: 2022/10/18 14:41:03 by mkaraden         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
 #include "libft.h"
-#include <stdio.h>
 
-static int	ft_intlen(int n) //negatifse + 1
+static int	ft_intlen(int n)
 {
-	int rt;
-     
+	int	rt;
+
 	rt = (n < 0);
 	if (n == 0)
 		return (1);
@@ -77,12 +76,3 @@ char	*ft_itoa(int n)
 	ft_strrev(rt);
 	return (rt);
 }
-
-// int main()
-// {
-//     printf("%s\n", ft_itoa(-123));
-//     printf("%s\n", ft_itoa(0));
-//     printf("%s\n", ft_itoa(2147483647));
-//     printf("%s\n", ft_itoa(-2147483648));
-//     return (0);
-// }

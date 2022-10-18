@@ -6,7 +6,7 @@
 /*   By: mkaraden <mkaraden@student.42istanbul.c    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2022/10/08 16:52:22 by mkaraden          #+#    #+#             */
-/*   Updated: 2022/10/17 12:16:49 by mkaraden         ###   ########.fr       */
+/*   Updated: 2022/10/18 14:56:52 by mkaraden         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -19,13 +19,13 @@ static int	ft_getwordcount(char const *s, char c)
 
 	i = 0;
 	rt = 0;
-	while(s[i])
+	while (s[i])
 	{
-		while (s[i] == c)  //c leri geciyor
+		while (s[i] == c)
 			i++;
-		if(s[i] != c && s[i]) //sona gelmediyse rt artiyor
+		if (s[i] != c && s[i])
 			rt++;
-		while (s[i] != c && s[i]) //c gelene kadar index artiyor
+		while (s[i] != c && s[i])
 			i++;
 	}
 	return (rt);
@@ -36,34 +36,31 @@ char	**ft_split(char const *s, char c)
 	char	**rt;
 	int		wordcount;
 	int		i;
-	int		templen; //wordlen
-	int		j; //dis arrayin indexi
+	int		templen;
+	int		j;
 
 	i = 0;
 	j = -1;
 	if (!s)
 		return (0);
-	wordcount = ft_getwordcount(s,c);
-	rt = (char **)malloc(sizeof(char *) * (wordcount + 1)); //sondaki null pointer icin
+	wordcount = ft_getwordcount(s, c);
+	rt = (char **)malloc(sizeof(char *) * (wordcount + 1));
 	if (!rt)
 		return (0);
-	while(s[i])
+	while (s[i])
 	{
 		templen = 0;
-		while (s[i] == c)  //c leri geciyor
+		while (s[i] == c)
 			i++;
-		if(s[i] != c && s[i]) //sona gelmediyse dis array artiyor
+		if (s[i] != c && s[i])
 			j++;
-		while (s[i + templen] != c && s[i + templen]) //c gelene kadar index artiyor
+		while (s[i + templen] != c && s[i + templen])
 			templen++;
-		if(templen > 0)
-			rt[j] = ft_substr(s, i, templen); //123 456 789  \0 durumunda sondaki karakteri substr ye gondermemesi icin
-		i+=templen;
+		if (templen > 0)
+			rt[j] = ft_substr(s, i, templen);
+		i += templen;
 	}
-	j++; //dongu icinde son kelimeden sonra artmiyor
+	j++;
 	rt[j] = 0;
 	return (rt);
 }
-
-
-

@@ -6,23 +6,22 @@
 /*   By: mkaraden <mkaraden@student.42istanbul.c    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2022/10/15 17:41:01 by mkaraden          #+#    #+#             */
-/*   Updated: 2022/10/16 15:09:18 by mkaraden         ###   ########.fr       */
+/*   Updated: 2022/10/18 15:18:16 by mkaraden         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
 #include "libft.h"
 
-static int  ft_abs(int n)
+static int	ft_abs(int n)
 {
-    if (n < 0)
-        n = -n;
-    return (n);
+	if (n < 0)
+		n = -n;
+	return (n);
 }
 
-
-void    ft_putnbr_fd(int n, int fd)
+void	ft_putnbr_fd(int n, int fd)
 {
-    char	str[13];
+	char	str[13];
 	int		is_neg;
 	int		len;
 

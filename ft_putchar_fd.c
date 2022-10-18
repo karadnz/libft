@@ -6,7 +6,7 @@
 /*   By: mkaraden <mkaraden@student.42istanbul.com  +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2022/10/08 18:32:12 by mkaraden          #+#    #+#             */
-/*   Updated: 2022/10/08 18:33:29 by mkaraden         ###   ########.fr       */
+/*   Updated: 2022/10/18 14:52:18 by mkaraden         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -16,4 +16,3 @@ void	ft_putchar_fd(char c, int fd)
 {
 	write(fd, &c, 1);
 }
-

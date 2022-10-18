@@ -6,7 +6,7 @@
 /*   By: mkaraden <mkaraden@student.42istanbul.com  +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2022/10/03 14:12:23 by mkaraden          #+#    #+#             */
-/*   Updated: 2022/10/04 14:57:54 by mkaraden         ###   ########.fr       */
+/*   Updated: 2022/10/18 15:21:24 by mkaraden         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -14,7 +14,7 @@
 
 size_t	ft_strlen(const char *str)
 {
-	size_t i;
+	size_t	i;
 
 	i = 0;
 	while (str[i])

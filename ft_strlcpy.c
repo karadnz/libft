@@ -6,13 +6,12 @@
 /*   By: mkaraden <mkaraden@student.42istanbul.c    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2022/10/04 13:06:11 by mkaraden          #+#    #+#             */
-/*   Updated: 2022/10/13 13:05:21 by mkaraden         ###   ########.fr       */
+/*   Updated: 2022/10/18 15:22:02 by mkaraden         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
 #include "libft.h"
 
-//strlcpy() and strlcat() take the full size of the buffer (not just the length)
 size_t	ft_strlcpy(char *dst, const char *src, size_t dstsize)
 {
 	size_t	i;
@@ -48,7 +47,3 @@ size_t	ft_strlcpy2(char *dst, const char *src, size_t dstsize)
 	}
 	return (ft_strlen(src));
 }
-
-
-//0 dan buyuk olmasina bakma nedeni 0,-1 vs vs lerde sonuna null koymamasi
-//gerekmesi
