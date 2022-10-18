@@ -6,7 +6,7 @@
 /*   By: mkaraden <mkaraden@student.42istanbul.c    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2022/10/08 16:52:22 by mkaraden          #+#    #+#             */
-/*   Updated: 2022/10/18 14:56:52 by mkaraden         ###   ########.fr       */
+/*   Updated: 2022/10/18 17:39:55 by mkaraden         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -34,7 +34,6 @@ static int	ft_getwordcount(char const *s, char c)
 char	**ft_split(char const *s, char c)
 {
 	char	**rt;
-	int		wordcount;
 	int		i;
 	int		templen;
 	int		j;
@@ -43,8 +42,7 @@ char	**ft_split(char const *s, char c)
 	j = -1;
 	if (!s)
 		return (0);
-	wordcount = ft_getwordcount(s, c);
-	rt = (char **)malloc(sizeof(char *) * (wordcount + 1));
+	rt = (char **)malloc(sizeof(char *) * (ft_getwordcount(s, c) + 1));
 	if (!rt)
 		return (0);
 	while (s[i])
@@ -60,7 +58,6 @@ char	**ft_split(char const *s, char c)
 			rt[j] = ft_substr(s, i, templen);
 		i += templen;
 	}
-	j++;
-	rt[j] = 0;
+	rt[++j] = 0;
 	return (rt);
 }
