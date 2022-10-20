@@ -31,20 +31,14 @@ static int	ft_getwordcount(char const *s, char c)
 	return (rt);
 }
 
-char	**ft_split(char const *s, char c)
+char	**ft_splitter(char const *s, char c, char **rt)
 {
-	char	**rt;
-	int		i;
-	int		templen;
-	int		j;
+	int	i;
+	int	j;
+	int	templen;
 
 	i = 0;
 	j = -1;
-	if (!s)
-		return (0);
-	rt = (char **)malloc(sizeof(char *) * (ft_getwordcount(s, c) + 1));
-	if (!rt)
-		return (0);
 	while (s[i])
 	{
 		templen = 0;
@@ -59,5 +53,18 @@ char	**ft_split(char const *s, char c)
 		i += templen;
 	}
 	rt[++j] = 0;
+	return (rt);
+}
+
+char	**ft_split(char const *s, char c)
+{
+	char	**rt;
+
+	if (!s)
+		return (0);
+	rt = (char **)malloc(sizeof(char *) * (ft_getwordcount(s, c) + 1));
+	if (!rt)
+		return (0);
+	rt = ft_splitter(s, c, rt);
 	return (rt);
 }
