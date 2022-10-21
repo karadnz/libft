@@ -31,7 +31,7 @@ static int	ft_getwordcount(char const *s, char c)
 	return (rt);
 }
 
-char	**ft_splitter(char const *s, char c, char **rt)
+static char	**ft_splitter(char const *s, char c, char **rt)
 {
 	int	i;
 	int	j;
