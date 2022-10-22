@@ -6,7 +6,7 @@
 #    By: mkaraden <marvin@42.fr>                    +#+  +:+       +#+         #
 #                                                 +#+#+#+#+#+   +#+            #
 #    Created: 2022/10/21 18:31:49 by mkaraden          #+#    #+#              #
-#    Updated: 2022/10/21 18:31:52 by mkaraden         ###   ########.fr        #
+#    Updated: 2022/10/22 10:20:47 by mkaraden         ###   ########.fr        #
 #                                                                              #
 # **************************************************************************** #
 
@@ -33,7 +33,7 @@ NAME		= libft.a
 all:		$(NAME)
 
 $(NAME):	$(OBJS)
-			ar rc $(NAME) $(OBJS)
+			ar rcs $(NAME) $(OBJS)
 
 clean:		
 			rm -f $(OBJS) $(BONUS_OBJS)
